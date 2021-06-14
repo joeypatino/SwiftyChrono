@@ -25,15 +25,15 @@ func sortTwoNumbers(_ index1: Int, _ index2: Int) -> (lessNumber: Int, greaterNu
 
 extension NSTextCheckingResult {
     func isNotEmpty(atRangeIndex index: Int) -> Bool {
-			return range(at: index).length != 0
+            return range(at: index).length != 0
     }
     
     func isEmpty(atRangeIndex index: Int) -> Bool {
-			return range(at: index).length == 0
+            return range(at: index).length == 0
     }
     
     func string(from text: String, atRangeIndex index: Int) -> String {
-			return text.subString(with: range(at: index))
+            return text.subString(with: range(at: index))
     }
 }
 
@@ -47,27 +47,27 @@ extension String {
     }
     
     func substring(from idx: Int) -> String {
-        return String(self[index(startIndex, offsetBy: idx)...])
+        return String(self[utf16.index(utf16.startIndex, offsetBy: idx)...])
     }
     
     func substring(from startIdx: Int, to endIdx: Int? = nil) -> String {
         if startIdx < 0 || (endIdx != nil && endIdx! < 0) {
             return ""
         }
-			let start = index(startIndex, offsetBy: startIdx)
-			let end = endIdx != nil ? index(startIndex, offsetBy: endIdx!) : endIndex
-			return String(self[start..<end])
+        let start = utf16.index(utf16.startIndex, offsetBy: startIdx)
+        let end = endIdx != nil ? utf16.index(utf16.startIndex, offsetBy: endIdx!) : utf16.endIndex
+            return String(self[start..<end])
     }
     
-    func range(ofStartIndex idx: Int, length: Int) -> Range<String.Index> {
-        let startIndex0 = index(startIndex, offsetBy: idx)
-        let endIndex0 = index(startIndex, offsetBy: idx + length)
+    func range(ofStartIndex idx: Int, length: Int) -> Range<String.UTF16View.Index> {
+        let startIndex0 = utf16.index(utf16.startIndex, offsetBy: idx)
+        let endIndex0 = utf16.index(utf16.startIndex, offsetBy: idx + length)
         return Range(uncheckedBounds: (lower: startIndex0, upper: endIndex0))
     }
     
-    func range(ofStartIndex startIdx: Int, andEndIndex endIdx: Int) -> Range<String.Index> {
-        let startIndex0 = index(startIndex, offsetBy: startIdx)
-        let endIndex0 = index(startIndex, offsetBy: endIdx)
+    func range(ofStartIndex startIdx: Int, andEndIndex endIdx: Int) -> Range<String.UTF16View.Index> {
+        let startIndex0 = utf16.index(utf16.startIndex, offsetBy: startIdx)
+        let endIndex0 = utf16.index(utf16.startIndex, offsetBy: endIdx)
         return Range(uncheckedBounds: (lower: startIndex0, upper: endIndex0))
     }
     
