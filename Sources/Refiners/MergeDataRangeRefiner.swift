@@ -8,7 +8,7 @@
 
 import Foundation
 
-class MergeDateRangeRefiner: Refiner {
+public class MergeDateRangeRefiner: Refiner {
     var PATTERN: String { return "" }
     var TAGS: TagUnit { return .none }
     

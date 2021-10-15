@@ -8,7 +8,7 @@
 
 import Foundation
 
-class FRMergeDateRangeRefiner: MergeDateRangeRefiner {
+public class FRMergeDateRangeRefiner: MergeDateRangeRefiner {
     override var PATTERN: String { return "^\\s*(à|a|\\-)\\s*$" }
     override var TAGS: TagUnit { return .frMergeDateRangeRefiner }
 }

@@ -8,6 +8,6 @@
 
 import Foundation
 
-class JPMergeDateRangeRefiner: ENMergeDateRangeRefiner {
+public class JPMergeDateRangeRefiner: ENMergeDateRangeRefiner {
     override var PATTERN: String { return "^\\s*(から|ー)\\s*$" }
 }

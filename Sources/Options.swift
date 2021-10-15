@@ -9,16 +9,16 @@
 import Foundation
 
 public struct ModeOptio {
-    var parsers: [Parser]
-    var refiners: [Refiner]
+    public var parsers: [Parser]
+    public var refiners: [Refiner]
     
-    init(parsers: [Parser], refiners: [Refiner]) {
+    public init(parsers: [Parser], refiners: [Refiner]) {
         self.parsers = parsers
         self.refiners = refiners
     }
 }
 
-private func baseOption(strictMode: Bool) -> ModeOptio {
+public func baseOption(strictMode: Bool) -> ModeOptio {
     return ModeOptio(parsers: [
         // EN
         ENISOFormatParser(strictMode: strictMode),

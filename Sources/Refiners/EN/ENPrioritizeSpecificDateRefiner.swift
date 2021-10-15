@@ -75,7 +75,7 @@ func mergeResult(text: String, specificResult: ParsedResult, nonSpecificResult: 
     return specificResult
 }
 
-class ENPrioritizeSpecificDateRefiner: Refiner {
+public class ENPrioritizeSpecificDateRefiner: Refiner {
     override public func refine(text: String, results: [ParsedResult], opt: [OptionType: Int]) -> [ParsedResult] {
         var results = results
         let resultsLength = results.count
@@ -119,15 +119,3 @@ class ENPrioritizeSpecificDateRefiner: Refiner {
         return mergedResults
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-

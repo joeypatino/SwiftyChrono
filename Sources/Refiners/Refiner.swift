@@ -8,13 +8,14 @@
 
 import Foundation
 
-class Refiner {
+public class Refiner {
     public func refine(text: String, results: [ParsedResult], opt: [OptionType: Int]) -> [ParsedResult] {
         return results
     }
+    public init() {}
 }
 
-class Filter: Refiner {
+public class Filter: Refiner {
     public func isValid(text: String, result: ParsedResult, opt: [OptionType: Int]) -> Bool {
         return true
     }

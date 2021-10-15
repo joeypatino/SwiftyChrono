@@ -14,7 +14,7 @@ private let timezoneOffsetSignGroup = 2
 private let timezoneOffsetHourOffset = 3
 private let timezoneOffsetMinuteOffsetGroup = 4
 
-class ExtractTimezoneOffsetRefiner: Refiner {
+public class ExtractTimezoneOffsetRefiner: Refiner {
     override public func refine(text: String, results: [ParsedResult], opt: [OptionType: Int]) -> [ParsedResult] {
         let resultsLength = results.count
         var newResults = [ParsedResult]()
